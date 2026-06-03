@@ -32,6 +32,9 @@ src/
 ├── handlers/             # HTTP layer: request -> service -> response
 ├── models/               # request/response DTOs (serde + ToSchema)
 └── services/             # business logic (add when needed)
+└── config/               # database configuration
+└── repositories/         # actual sql logic
+
 ```
 
 ## Adding A New Endpoint
