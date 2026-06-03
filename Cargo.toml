@@ -16,3 +16,12 @@ utoipa-swagger-ui = { version = "9", features = ["axum"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tower-http = { version = "0.6", features = ["trace"] }
+
+sqlx = { version = "0.8", features = [
+    "runtime-tokio-rustls",
+    "postgres",
+    "macros",
+    "uuid"
+] }
+
+dotenvy = "0.15"
