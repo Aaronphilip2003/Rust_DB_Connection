@@ -1,4 +1,5 @@
 use axum::{Json, extract::State};
+use crate::models::responses::entry_response::EntryResponse;
 
 use crate::{AppState, services::entry_service};
 
@@ -13,8 +14,15 @@ use crate::{AppState, services::entry_service};
         )
     )
 )]
-pub async fn get_entries(State(state): State<AppState>) -> Json<Vec<String>> {
-    let entries = entry_service::get_entries(&state.db).await.unwrap();
+
+pub async fn get_entries(
+    State(state): State<AppState>,
+) -> Json<Vec<EntryResponse>> {
+
+    let entries =
+        entry_service::get_entries(&state.db)
+            .await
+            .unwrap();
 
     Json(entries)
 }
